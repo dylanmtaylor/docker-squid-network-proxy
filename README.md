@@ -8,6 +8,9 @@ Each server should have a new line after it, and if you want to include subdomai
 docker run --env ALLOW_LIST=".example.com\n.google.com\n" -p 8080:8080 dylanmtaylor/squid-network-proxy:latest
 ```
 
+Alternatively, there is another version of this image with a 'passthrough' tag.
+It forwards traffic on to the destination and writes connections ot the access log (stdout on the container). The passthrough version is useful for generating an allow list by looking at the traffic going through the proxy before switching to the restrictive container variant.
+
 ## Testing the proxy
 You can test to see how squid behaves by using curl with the `-x` argument. In this example, I use the run command from above.
 
