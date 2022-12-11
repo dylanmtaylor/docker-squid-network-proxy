@@ -5,7 +5,7 @@ Each server should have a new line after it, and if you want to include subdomai
 
 ## Sample Usage
 ```
-docker run --env ALLOW_LIST=".example.com\n.google.com\n" -p 8080:8080 squid-network-proxy:latest
+docker run --env ALLOW_LIST=".example.com\n.google.com\n" -p 8080:8080 dylanmtaylor/squid-network-proxy:latest
 ```
 
 ## Testing the proxy
