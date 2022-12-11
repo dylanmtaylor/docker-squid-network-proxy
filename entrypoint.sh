@@ -2,9 +2,16 @@
 
 # Modified Squid OCI image entrypoint
 
+# Print out the current squid configuration file
+echo "Squid configuration file:"
+cat /etc/squid/squid.conf
+echo
+
 # Write the ALLOW_LIST variable to the allow_list.txt file
-echo "$ALLOW_LIST" > /etc/squid/allow_list.txt
+echo -ne "$ALLOW_LIST" > /etc/squid/allow_list.txt
+echo "Allow list file:"
 cat /etc/squid/allow_list.txt
+echo
 
 # This entrypoint aims to forward the squid logs to stdout to assist users of
 # common container related tooling (e.g., kubernetes, docker-compose, etc) to
