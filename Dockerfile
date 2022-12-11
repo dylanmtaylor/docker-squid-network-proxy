@@ -1,4 +1,4 @@
 FROM ubuntu/squid:latest
 
 COPY squid.conf /etc/squid/squid.conf
-COPY allow_list.txt /etc/squid/allow_list.txt
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
